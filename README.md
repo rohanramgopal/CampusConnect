@@ -242,3 +242,213 @@ flowchart LR
     --> C[Save Marks in MongoDB]
     --> D[Student Views Marks in Dashboard]
 ```
+
+---
+
+✨ Core Features
+
+Role-Based Dashboard
+
+After login, the system automatically identifies whether the user is Admin, Teacher, or Student and loads the correct dashboard.
+
+
+User Management
+
+Admin can view all registered users including teachers and students.
+
+
+Timetable Management
+
+Admin creates timetables based on department, section, semester, day, subject, teacher, room, and time.
+
+Teachers and students only see timetable entries relevant to their department, section, and semester.
+
+
+Announcements
+
+Admin can post announcements to:
+
+1.All users
+2.Teachers
+3.Students
+
+Announcements are stored in MongoDB and displayed in the relevant portal.
+
+
+Exams and Events
+
+Admin can create exam schedules and college events. Students can view relevant exams and events.
+
+
+Assignments
+
+Teachers can create assignments for their class. Students can view assignments and submit answers.
+
+
+Messaging
+
+The system supports two types of messages:
+
+1.Class messages
+2.Direct messages
+
+Class messages are visible only to users in the same department, section, and semester.
+
+Direct messages are visible only to the selected receiver.
+
+Marks Management
+
+Teachers can select students from their assigned class and enter marks. Students can view their own marks from their dashboard.
+
+Complaint System
+
+Students can raise complaints to:
+
+Admin
+Selected teacher
+
+This improves transparency and gives students a safe digital channel for reporting concerns.
+
+⚙️ Installation and Setup
+
+Clone the repository:
+
+git clone git@github.com:rohanramgopal/CampusConnect.git
+cd CampusConnect
+
+Install backend dependencies:
+
+cd backend
+npm install
+
+Create environment file:
+
+cat > .env <<'ENV'
+PORT=5001
+MONGO_URI=mongodb://127.0.0.1:27017/campusconnect
+JWT_SECRET=campusconnect_super_secret_key
+ENV
+
+Start backend:
+
+npm run dev
+
+Open another terminal and install frontend dependencies:
+
+cd frontend
+npm install
+
+Start frontend:
+
+npm run dev
+
+Open the app:
+
+http://localhost:5173
+
+Backend runs on:
+
+http://localhost:5001
+
+
+👥 Demo Users
+
+Run seed command inside backend:
+
+cd backend
+npm run seed
+
+Then login using:
+
+Admin
+Email: admin@campus.com
+Password: 123456
+Teacher
+Email: teacher@campus.com
+Password: 123456
+Student
+Email: student@campus.com
+Password: 123456
+
+
+🧪 API Testing
+
+You can test backend APIs using Postman or Thunder Client.
+
+Base API URL:
+
+http://localhost:5001/api
+
+Main API groups:
+
+/api/auth
+/api/admin
+/api/teacher
+/api/student
+🔒 Security Features
+Password hashing using bcryptjs
+JWT-based authentication
+Role-based route protection
+Admin-only protected APIs
+Teacher-only protected APIs
+Student-only protected APIs
+Controlled access to class-specific data
+Direct messages restricted by receiver ID
+
+---
+
+🌟 Why This Project Stands Out
+
+CampusConnect is not just a basic CRUD project. It includes real academic workflows such as class-based communication, role-based access, assignment submission, marks entry, complaint routing, announcements, exams, events, and timetable management.
+
+It demonstrates practical full-stack development skills including:
+
+REST API design
+Authentication and authorization
+Database modeling
+Frontend state management
+Role-based UI rendering
+Real-world module separation
+Academic workflow automation
+Scalable project architecture
+
+---
+
+🚀 Future Enhancements
+Attendance tracking
+Firebase push notifications
+Parent portal
+File upload for assignments
+Admin analytics dashboard
+Teacher-to-admin messaging
+Complaint escalation workflow
+Student performance charts
+Department-wise analytics
+Multi-college support
+Deployment on Render and Vercel
+Android mobile app version
+
+---
+
+📌 Use Cases
+Engineering colleges
+Degree colleges
+Diploma colleges
+Schools
+Coaching institutes
+Training centers
+Internal academic communication systems
+
+---
+
+🧾 Conclusion
+
+CampusConnect provides a complete digital solution for managing college communication and academic workflows. It improves transparency, reduces communication gaps, and creates a centralized platform for students, teachers, and administrators.
+
+This project is suitable as a major academic project, portfolio project, and full-stack development demonstration.
+
+---
+
+👨‍💻 Author
+
+Rohan Ramgopal
