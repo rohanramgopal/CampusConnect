@@ -132,6 +132,7 @@ Student can:
 
 ```mermaid
 flowchart TD
+
     A[Admin User] --> F[React Web Frontend]
     B[Teacher User] --> F
     C[Student User] --> F
@@ -160,8 +161,13 @@ flowchart TD
 
     DB --> API
     API --> F
-🔐 Authentication Flow
+```
+
+## 🔐 Authentication Flow
+
+```mermaid
 sequenceDiagram
+
     participant User
     participant Frontend
     participant Backend
@@ -176,33 +182,63 @@ sequenceDiagram
     Backend-->>Frontend: Return token and user role
     Frontend->>Frontend: Store session state
     Frontend-->>User: Redirect to role dashboard
-📢 Announcement Flow
+```
+
+## 📢 Announcement Flow
+
+```mermaid
 flowchart LR
+
     A[Admin Creates Announcement] --> B[Backend Validates Admin Token]
     B --> C[Save Announcement in MongoDB]
+
     C --> D{Target Role}
+
     D -->|All| E[Visible to Teachers and Students]
     D -->|Teacher| F[Visible to Teachers]
     D -->|Student| G[Visible to Students]
-💬 Messaging Flow
-flowchart TD
-    A[Teacher Sends Class Message] --> B[Saved with Department Section Semester]
-    B --> C[All Students in Same Class Can View]
+```
 
-    D[Teacher Sends Direct Message] --> E[Saved with Receiver Student ID]
-    E --> F[Only Selected Student Can View]
+## 💬 Messaging Flow
 
-    G[Student Sends Direct Message] --> H[Saved with Receiver Teacher ID]
-    H --> I[Only Selected Teacher Can View]
-📝 Complaint Flow
+```mermaid
 flowchart TD
-    A[Student Raises Complaint] --> B{Send To}
+
+    A[Teacher Sends Class Message]
+    --> B[Saved with Department Section Semester]
+    --> C[All Students in Same Class Can View]
+
+    D[Teacher Sends Direct Message]
+    --> E[Saved with Receiver Student ID]
+    --> F[Only Selected Student Can View]
+
+    G[Student Sends Direct Message]
+    --> H[Saved with Receiver Teacher ID]
+    --> I[Only Selected Teacher Can View]
+```
+
+## 📝 Complaint Flow
+
+```mermaid
+flowchart TD
+
+    A[Student Raises Complaint]
+    --> B{Send To}
+
     B -->|Admin| C[Admin Complaint Dashboard]
     B -->|Teacher| D[Selected Teacher Complaint Dashboard]
+
     C --> E[Admin Reviews Status]
     D --> F[Teacher Reviews Complaint]
-📊 Marks Flow
+```
+
+## 📊 Marks Flow
+
+```mermaid
 flowchart LR
-    A[Teacher Selects Student] --> B[Enter Subject Exam Marks Remarks]
-    B --> C[Save Marks in MongoDB]
-    C --> D[Student Views Marks in Dashboard]
+
+    A[Teacher Selects Student]
+    --> B[Enter Subject Exam Marks Remarks]
+    --> C[Save Marks in MongoDB]
+    --> D[Student Views Marks in Dashboard]
+```
