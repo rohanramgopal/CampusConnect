@@ -245,209 +245,359 @@ flowchart LR
 
 ---
 
-✨ Core Features
 
-Role-Based Dashboard
+## ✨ Core Features
 
-After login, the system automatically identifies whether the user is Admin, Teacher, or Student and loads the correct dashboard.
+### 🎯 Role-Based Dashboard
 
+After login, the system automatically identifies whether the user is an Admin, Teacher, or Student and loads the corresponding dashboard with role-specific features and permissions.
 
-User Management
+---
 
-Admin can view all registered users including teachers and students.
+### 👥 User Management
 
+The Admin can view and manage all registered users including:
 
-Timetable Management
+- Teachers
+- Students
+- Admin accounts
 
-Admin creates timetables based on department, section, semester, day, subject, teacher, room, and time.
+This enables centralized user monitoring and management.
 
-Teachers and students only see timetable entries relevant to their department, section, and semester.
+---
 
+### 📅 Timetable Management
 
-Announcements
+Admins can create and manage timetables based on:
 
-Admin can post announcements to:
+- Department
+- Section
+- Semester
+- Day
+- Subject
+- Teacher
+- Room
+- Time
 
-1.All users
-2.Teachers
-3.Students
+Teachers and students only see timetable entries relevant to their assigned class and department.
 
-Announcements are stored in MongoDB and displayed in the relevant portal.
+---
 
+### 📢 Announcements
 
-Exams and Events
+Admins can post announcements to:
 
-Admin can create exam schedules and college events. Students can view relevant exams and events.
+1. All Users  
+2. Teachers  
+3. Students  
 
+Announcements are stored in MongoDB and displayed dynamically in the relevant dashboard portals.
 
-Assignments
+---
 
-Teachers can create assignments for their class. Students can view assignments and submit answers.
+### 📝 Exams and Events
 
+Admins can:
 
-Messaging
+- Create exam schedules
+- Add college events
+- Publish important academic updates
 
-The system supports two types of messages:
+Students can view relevant exams and events directly from their dashboard.
 
-1.Class messages
-2.Direct messages
+---
 
-Class messages are visible only to users in the same department, section, and semester.
+### 📚 Assignments
 
-Direct messages are visible only to the selected receiver.
+Teachers can:
 
-Marks Management
+- Create assignments
+- Add assignment descriptions
+- Set due dates
 
-Teachers can select students from their assigned class and enter marks. Students can view their own marks from their dashboard.
+Students can:
 
-Complaint System
+- View assignments
+- Submit assignment answers
+- Track pending academic tasks
+
+---
+
+### 💬 Messaging System
+
+The system supports two types of messaging:
+
+1. Class Messages  
+2. Direct Messages  
+
+#### 📌 Class Messages
+
+Class messages are visible only to users belonging to the same:
+
+- Department
+- Section
+- Semester
+
+#### 📌 Direct Messages
+
+Direct messages are visible only to the selected receiver, ensuring private communication between teachers and students.
+
+---
+
+### 📊 Marks Management
+
+Teachers can:
+
+- Select students from their assigned class
+- Enter marks
+- Add remarks and exam details
+
+Students can:
+
+- View their marks
+- Track academic performance
+- View subject-wise scores
+
+---
+
+### ⚠️ Complaint System
 
 Students can raise complaints to:
 
-Admin
-Selected teacher
+- Admin
+- Selected Teacher
 
-This improves transparency and gives students a safe digital channel for reporting concerns.
+This creates a transparent and secure communication channel for academic and personal concerns.
 
-⚙️ Installation and Setup
+---
 
-Clone the repository:
+# ⚙️ Installation and Setup
 
+## 📥 Clone Repository
+
+```bash
 git clone git@github.com:rohanramgopal/CampusConnect.git
 cd CampusConnect
+```
 
-Install backend dependencies:
+---
 
+## 📦 Install Backend Dependencies
+
+```bash
 cd backend
 npm install
+```
 
-Create environment file:
+---
 
+## 🔐 Create Environment File
+
+```bash
 cat > .env <<'ENV'
 PORT=5001
 MONGO_URI=mongodb://127.0.0.1:27017/campusconnect
 JWT_SECRET=campusconnect_super_secret_key
 ENV
+```
 
-Start backend:
+---
 
+## ▶️ Start Backend Server
+
+```bash
 npm run dev
+```
 
-Open another terminal and install frontend dependencies:
+---
 
+## 💻 Install Frontend Dependencies
+
+Open another terminal:
+
+```bash
 cd frontend
 npm install
+```
 
-Start frontend:
+---
 
+## 🚀 Start Frontend
+
+```bash
 npm run dev
+```
 
-Open the app:
+---
 
+## 🌐 Open Application
+
+Frontend:
+
+```txt
 http://localhost:5173
+```
 
-Backend runs on:
+Backend:
 
+```txt
 http://localhost:5001
+```
 
+---
 
-👥 Demo Users
+# 👥 Demo Users
 
 Run seed command inside backend:
 
+```bash
 cd backend
 npm run seed
+```
 
-Then login using:
+---
 
-Admin
+## 🔑 Login Credentials
+
+### 👨‍💼 Admin
+
+```txt
 Email: admin@campus.com
 Password: 123456
-Teacher
+```
+
+### 👨‍🏫 Teacher
+
+```txt
 Email: teacher@campus.com
 Password: 123456
-Student
+```
+
+### 👨‍🎓 Student
+
+```txt
 Email: student@campus.com
 Password: 123456
+```
 
+---
 
-🧪 API Testing
+# 🧪 API Testing
 
-You can test backend APIs using Postman or Thunder Client.
+You can test backend APIs using:
+
+- Postman
+- Thunder Client
 
 Base API URL:
 
+```txt
 http://localhost:5001/api
+```
 
-Main API groups:
+Main API Groups:
 
+```txt
 /api/auth
 /api/admin
 /api/teacher
 /api/student
-🔒 Security Features
-Password hashing using bcryptjs
-JWT-based authentication
-Role-based route protection
-Admin-only protected APIs
-Teacher-only protected APIs
-Student-only protected APIs
-Controlled access to class-specific data
-Direct messages restricted by receiver ID
+```
+
+---
+
+# 🔒 Security Features
+
+- Password hashing using bcryptjs
+- JWT-based authentication
+- Role-based route protection
+- Admin-only protected APIs
+- Teacher-only protected APIs
+- Student-only protected APIs
+- Controlled access to class-specific data
+- Direct messages restricted by receiver ID
+
+---
+
+# 🌟 Why This Project Stands Out
+
+CampusConnect is not just a basic CRUD application. It includes real-world academic workflows such as:
+
+- Role-based access control
+- Class-based communication
+- Assignment management
+- Marks management
+- Complaint routing
+- Announcement handling
+- Timetable management
+- Event and exam scheduling
+
+The project demonstrates practical full-stack development skills including:
+
+- REST API design
+- Authentication and authorization
+- Database modeling
+- Frontend state management
+- Role-based UI rendering
+- Real-world module separation
+- Academic workflow automation
+- Scalable architecture design
+
+---
+
+# 🚀 Future Enhancements
+
+- Attendance tracking
+- Firebase push notifications
+- Parent portal
+- File upload for assignments
+- Admin analytics dashboard
+- Teacher-to-admin messaging
+- Complaint escalation workflow
+- Student performance charts
+- Department-wise analytics
+- Multi-college support
+- Deployment on Render and Vercel
+- Android mobile application
+
+---
+
+# 📌 Use Cases
+
+- Engineering Colleges
+- Degree Colleges
+- Diploma Colleges
+- Schools
+- Coaching Institutes
+- Training Centers
+- Internal Academic Communication Systems
+
+---
+
+# 🧾 Conclusion
+
+CampusConnect provides a complete digital solution for managing academic workflows and communication inside educational institutions.
+
+The platform improves:
+
+- Transparency
+- Academic coordination
+- Communication efficiency
+- Complaint handling
+- Academic tracking
+
+This project is suitable for:
+
+- Major academic projects
+- Full-stack portfolio projects
+- College demonstrations
+- Resume and placement showcases
+
+---
+
+# 👨‍💻 Author
+
+## Rohan Ramgopal
 
 
-
-🌟 Why This Project Stands Out
-
-CampusConnect is not just a basic CRUD project. It includes real academic workflows such as class-based communication, role-based access, assignment submission, marks entry, complaint routing, announcements, exams, events, and timetable management.
-
-It demonstrates practical full-stack development skills including:
-
-REST API design
-Authentication and authorization
-Database modeling
-Frontend state management
-Role-based UI rendering
-Real-world module separation
-Academic workflow automation
-Scalable project architecture
-
-
-
-🚀 Future Enhancements
-Attendance tracking
-Firebase push notifications
-Parent portal
-File upload for assignments
-Admin analytics dashboard
-Teacher-to-admin messaging
-Complaint escalation workflow
-Student performance charts
-Department-wise analytics
-Multi-college support
-Deployment on Render and Vercel
-Android mobile app version
-
-
-
-📌 Use Cases
-Engineering colleges
-Degree colleges
-Diploma colleges
-Schools
-Coaching institutes
-Training centers
-Internal academic communication systems
-
-
-🧾 Conclusion
-
-CampusConnect provides a complete digital solution for managing college communication and academic workflows. It improves transparency, reduces communication gaps, and creates a centralized platform for students, teachers, and administrators.
-
-This project is suitable as a major academic project, portfolio project, and full-stack development demonstration.
-
-
-
-👨‍💻 Author
-
-Rohan Ramgopal
+GitHub: https://github.com/rohanramgopal
