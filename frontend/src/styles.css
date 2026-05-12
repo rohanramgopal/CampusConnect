@@ -1,0 +1,55 @@
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:#eef2ff;color:#0f172a}
+button,input,select,textarea{font-family:inherit}
+button{cursor:pointer}
+.authPage{min-height:100vh;display:grid;grid-template-columns:1.1fr .9fr;gap:50px;padding:56px;background:radial-gradient(circle at 20% 10%,#2563eb55,transparent 35%),linear-gradient(135deg,#020617,#0f172a 55%,#1e3a8a);align-items:center}
+.authHero{color:white}
+.glassBadge{display:inline-block;padding:10px 16px;border:1px solid #ffffff30;background:#ffffff12;border-radius:999px;color:#bfdbfe;font-weight:900;letter-spacing:2px}
+.authHero h1{font-size:76px;line-height:.9;margin:22px 0 18px;letter-spacing:-4px;color:white}
+.authHero p{font-size:22px;line-height:1.55;color:#dbeafe;max-width:720px}
+.heroGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:30px}
+.feature{background:#ffffff12;border:1px solid #ffffff22;border-radius:24px;padding:20px;backdrop-filter:blur(14px)}
+.feature h3{margin:0 0 8px;color:white}.feature p{font-size:14px;margin:0;color:#cbd5e1}
+.authBox{background:#fff;border-radius:34px;padding:34px;box-shadow:0 35px 90px #0007}
+.toggle{display:grid;grid-template-columns:1fr 1fr;background:#e2e8f0;border-radius:18px;padding:6px;margin-bottom:20px}
+.toggle button{border:0;border-radius:14px;padding:15px;font-weight:900;background:transparent;color:#334155}
+.toggle .active{background:#2563eb;color:white}
+.authBox h2{font-size:34px;margin:0;color:#0f172a}.muted{color:#64748b;margin-bottom:20px}
+label{display:block;font-weight:900;color:#334155;margin:10px 0 7px}
+input,select,textarea{width:100%;border:1px solid #cbd5e1;background:#f8fafc;border-radius:16px;padding:15px;font-size:15px;color:#0f172a;margin-bottom:8px;outline:none}
+textarea{min-height:110px;resize:vertical}
+input:focus,select:focus,textarea:focus{border-color:#2563eb;box-shadow:0 0 0 4px #2563eb22}
+.primary{border:0;background:linear-gradient(135deg,#2563eb,#1d4ed8);color:white;border-radius:16px;padding:16px;font-weight:900;width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;margin-top:10px}
+.primary.small{width:auto;padding:12px 20px}
+.quick{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.quick button{border:0;background:#dbeafe;color:#1d4ed8;border-radius:14px;padding:12px;font-weight:900}
+.toast{margin-top:16px;background:#fff7ed;color:#9a3412;padding:14px;border-radius:14px;font-weight:800}
+.shell{min-height:100vh;display:grid;grid-template-columns:292px 1fr}
+.sidebar{background:#020617;color:white;padding:24px;display:flex;flex-direction:column;gap:10px;position:sticky;top:0;height:100vh}
+.brand{display:flex;gap:14px;align-items:center;margin-bottom:24px}
+.brandIcon{width:56px;height:56px;border-radius:18px;background:#2563eb;display:grid;place-items:center}
+.brand h2{margin:0;font-size:22px;color:white}.brand p{margin:4px 0 0;color:#93c5fd;font-size:12px;font-weight:900;letter-spacing:1.5px}
+.nav{border:0;background:transparent;color:#cbd5e1;border-radius:15px;padding:13px 14px;text-align:left;font-weight:800;display:flex;align-items:center;gap:12px}
+.nav:hover,.nav.active{background:#1e293b;color:white}
+.logout{margin-top:auto;border:0;background:#991b1b;color:white;padding:14px;border-radius:15px;font-weight:900;display:flex;align-items:center;justify-content:center;gap:10px}
+.main{padding:32px}
+.top{background:linear-gradient(135deg,#fff,#f8fafc);border-radius:28px;padding:28px 32px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 16px 45px #0f172a14;margin-bottom:24px;border:1px solid #e2e8f0}
+.eyebrow{margin:0;color:#2563eb;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;font-size:12px}
+.top h1{font-size:38px;margin:5px 0;color:#0f172a;letter-spacing:-1px}.sub{color:#64748b;margin:0;font-weight:700}
+.rolePill{display:flex;align-items:center;gap:8px;background:#dbeafe;color:#1d4ed8;border-radius:999px;padding:13px 18px;font-weight:900;text-transform:uppercase}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:22px}
+.stat{background:white;border:1px solid #e2e8f0;border-radius:26px;padding:24px;box-shadow:0 14px 40px #0f172a10}
+.stat svg{color:#2563eb}.stat p{color:#64748b;font-weight:800;margin:16px 0 6px}.stat h3{font-size:28px;margin:0;color:#0f172a;text-transform:capitalize}
+.panel{background:white;border:1px solid #e2e8f0;border-radius:28px;padding:26px;margin-bottom:24px;box-shadow:0 14px 40px #0f172a10}
+.panel h2{margin:0 0 20px;font-size:28px;color:#0f172a;letter-spacing:-.5px}
+.readable{font-size:17px;color:#334155;line-height:1.7}
+.formGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.formGrid textarea{grid-column:1/-1}
+.twoCol{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.cardsGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.dataCard{background:#f8fafc;border:1px solid #e2e8f0;border-radius:22px;padding:20px;color:#0f172a}
+.dataCard h3{margin:0 0 10px;font-size:20px;color:#0f172a}.dataCard p{color:#475569;line-height:1.5}.dataCard h2{font-size:34px;margin:10px 0;color:#2563eb}
+.dataCard.danger{background:#fff1f2;border-color:#fecaca}
+.line{background:white;border:1px solid #e2e8f0;border-radius:16px;padding:12px;margin-top:10px;display:flex;flex-direction:column;gap:5px}
+.chat{display:flex;flex-direction:column;gap:12px}.bubble{background:#f8fafc;border:1px solid #e2e8f0;border-radius:20px;padding:16px}.bubble b{color:#0f172a}.bubble p{margin:8px 0;color:#334155}.bubble small{color:#2563eb;font-weight:900}
+table{width:100%;border-collapse:collapse;background:white;border-radius:16px;overflow:hidden}th{background:#f1f5f9;color:#334155;text-align:left}th,td{padding:15px;border-bottom:1px solid #e2e8f0}td{color:#334155}.tag{background:#dbeafe;color:#1d4ed8;border-radius:999px;padding:6px 10px;font-weight:900;text-transform:uppercase;font-size:12px}
+@media(max-width:1000px){.authPage,.shell,.twoCol{grid-template-columns:1fr}.sidebar{height:auto;position:relative}.stats,.cardsGrid,.heroGrid,.formGrid{grid-template-columns:1fr}.authHero h1{font-size:46px}}
